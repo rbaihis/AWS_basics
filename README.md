@@ -8,10 +8,11 @@
 - **Africa**: af-south-1.
 
 ## globla service  VS regional service
-- its matter to know to tell when automating tasks when u need to specify region and when not.
-- using Paas for developers , region should be near where developers are.
-- using Saas or Iaas for solution should be close to customer.
-- IAM based on region case multi natonal solution whit diffirent admins in each region. etc ...
+- why its matter to know:
+  - when automating tasks, u should know when u need to specify region and when not.
+  - using Paas for developers , region should be near where developers are.
+  - using Saas or Iaas for solution should be close to customer.
+  - IAM based on region case multi natonal solution whit diffirent admins in each region. etc ...
 - Ex
   - **IAM** is global
   - **EC2** is Regional
