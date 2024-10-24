@@ -10,6 +10,6 @@
 ## globla service  VS regional service
 its matter to know to tell when automating tasks when u need to specify region and when not.
 - Ex
-  - **IAM** is gloabla
+  - **IAM** is global
   - **EC2** is Regional
   
