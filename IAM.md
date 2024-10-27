@@ -5,8 +5,8 @@
 - [Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html)
 ---
 ## Navigation:
-- [What is IAM](##What is IAM)?
-- [IAM Authentication & Security](## IAM Authentication & Security)
+- [What is IAM](##What-is-IAM)?
+- [IAM Authentication & Security](##IAM-Authentication-&-Security)
 - [IAM-Administration Decisions Helper](## IAM-Administration Decisions Helper)
 - [Users](## Users)
 - [Groups](##)
