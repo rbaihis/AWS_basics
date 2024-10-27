@@ -48,11 +48,13 @@ The report can be used to ensure compliance with credential life cycle requireme
   - IAM-Dashboard > Credential report > Download Report(csv-format)
 - **Report Include Info Such**:
   - user, arn, userCreationTime, pwEnabled?, pwLastUsed, pwLastChanged, pwNextRotation,  accessKey1LastRotated, accessKey1LastUsed, accessKey2Active, ..., cert1Active, cert1LastRotated, ... .
+ 
+---
 # IAM-Administration
 - Viewing user access history before making changes or deleting a user from an AWS account. You may need to access information on how or when the account was last used.</br>
 AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detailed information for `(Groups,Users,Policies,Roles)`.
 </br>You can use `IAM-Credentianls-Report` download CSV file for an overview as well. 
-###
+
 ## Users
 - An IAM-User consist of a name and credentials. The user is an entity that represents the person or application interacting with an AWS service.
 - When we initially set up an AWS account, we're logged in as the Root User. The root account has access to all services by default.
