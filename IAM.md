@@ -32,9 +32,19 @@
   - User > PW Credential > MFA Authenticating presented > Success
   - `Steps`:
     1. Knowledge based Credentials : either  (AccId || AccAlias) or (Email && PW Combo).
-    1. IF(KBC -> success) - MFA includes (Possession or Inheritance) Test
-    1. User is granted access upon successful Auth of Both security Layers 
-
+    2. IF(KBC -> success) - MFA includes (Possession or Inheritance) Test
+    3. User is granted access upon successful Auth of Both security Layers .
+  - **AWS MFA Compatible Devices**:
+    -  `Virtual MFA` this have to be done in specified time Interval , Ex: Google Authenticator, Authy.
+    -  `Unversal 2nd Factor (U2F) Security Key`, Inheritance Ex: Yubikey (usb device that uses fingerprint). 
+    -  `Hardware Key Fob`, similar to virtual MFA but only requires the hardware, no additional software needed Ex: Gemalto Token.
+### IAM Credentials Report
+- Credentials Report offers important information relevant to each IAM-User and their activities whithin the account.</br>
+The report can be used to ensure compliance with credential life cycle requirement such as password and access key rotation.
+- **How To Get It**:
+  - IAM-Dashboard > Credential report > Download Report(csv-format)
+- **Report Include Info Such**:
+  - user, arn, userCreationTime, pwEnabled?, pwLastUsed, pwLastChanged, pwNextRotation,  accessKey1LastRotated, accessKey1LastUsed, accessKey2Active, ..., cert1Active, cert1LastRotated, ... . 
 ## Users
 ## Groups
 ## Policies
