@@ -13,7 +13,7 @@
     - **Benefits**: when configured correctly IAM will dynamically manage the credentials for you with temporary credentials hat are rotated automatically.
     - **Note**: `only possible` if recources requiring access are `running inside AWS`.
   - **If Service Outside AWS**: require `programmatic access`, it's best to `create dedicated service accounts and policies` specifically for `each use case`.
-    - Ex : 
+    - (programmatic permission for specefic action)[/images/customPolicy.jpg]
   - 
   - 
 ## Users
