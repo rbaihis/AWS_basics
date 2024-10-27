@@ -8,6 +8,9 @@
   - `Grant Least privilege` - this concept refers to `granting the lowest level of permissions` to an IAM identity to begin with, and gradually increase them as the need arises.
     - most `AWS policies` come with diffirent options regarding the actions that can be performed within the service or resource.</br>
     **options can include**: list, read, write, permissions management, or tagging.
+  - Check policy access dates and delete policies that have not been used for some time -> to allign more with `Grant Least Privelege - concept`.
+  - Use `Customer managed policies` instead of `inline policies`.
+  - Frequently `rotate` passwords and Access Keys. 
   - Never sharing or publicly posting either a pw or secret access hey.
   - store access keys and secret access keys securely. preferably in an encrypted file.
   - Disable access keys that have not been used for some time.
