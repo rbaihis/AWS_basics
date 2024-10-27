@@ -1,4 +1,73 @@
+# IAM
+## Useful Links
+- [Link for a complete list of Actions, Resources, and Condition Keys for Aws](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
+- (Exaustive list of AWS services)[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html]
+## What is IAM
+- AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is `Authenticated and Authorized to use resources`.
+- All AWS accounts start with `single sign-in identity` known as the `Root account`.
+- This `Root user account` has complete access to all AWS services within the account.
+- Root access should only be used for certain account management tasks.
+### Characteristics of IAM
+- IAM user accounts allow others to administer the resources in AWS account `without having to share passwords`.
+- IAM accounts allow `granular permissions`. Each IAM user can be Granted a diffirent level of privileges for diffirent resources in the AWS account.
+- IAM credentials can also be used by applications that run on EC2/Lambda/etc instances.
+- IAM supports MFA for an added layer of security.
+- IAM provides the ability to logs access recordes or users that have made requests under the AWS account (tracking period 400DaysAgo-Now). Known as `Identity Information for Assurance`.
+- Logging can be enabled using `AWS CloudTrail`.
+  - **AWS CLoudTrail** is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account.
+- IAM is `integrated with many AWS-Services`, including:
+  - Compute, Container, Storage, DB, Developer Tools, Security, Identity and Many more.
+  - Complete List (here)[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html]
+- `IAM Data` is `Eventually Consistant`, changes made to updataing IAM-Identities or policies are stored and replicated across multiple servers withis AWS's data Centers around the world.
+### How IAM Can Be Accessed
+- (Web Browser) AWS Management Console
+- (Programatically) AWS Command Line Tools:
+   - (AWS CLI) AWS Command Line Interface
+   - (AWS Tools PowerShell) AWS Tools for Windows PowerShell
+- (SDKs - Programatically) AWS Software Development Kits, for diffirent languages.
+- IAM HTTPS API
 
+### IAM Mechanics (Theory)
+- **IAM Workflow**:
+  1. Principals
+  2. Authentication
+  3. Request
+  4. Authorization
+  5. Action/Operation
+  6. Resources
+#### Principals
+`a person or application that uses AWS account (root user, IAM-User, IAM-Rolee)` to sign-in and make request to AWS. `Pre-defined security and permission policies` will govern the permissions associated with the principal.
+#### Authentication
+A Principal will need to Authenticate in order to sign-in and use AWS services.</br>
+`Exceptions include`: **AWS S3** and **AWS STS** since they re both special usecases in term of use cases.</br>
+Authentication is either through `login credentials(Username/PW/MFA)` or `Secret Access Keys`.
+#### Request
+Once Authenticated the principal can make a request using either the `AWS Management Console, AWS APi, or AWS CLI`.
+- **Request Includes**:
+  - `Action Or operations`. Ex: Deploy an EC2 instance through the AWS M-Console.
+  - `Resources`. Refers to the AWS resource objects that will be included as part of the action or operation. Ex:EC2, AWS S3, etc.
+#### Authorization
+- Before a request to perform an action or operation is granted, it must be authorized to do it.
+- Authorization is performed by evaluating data from the request against predefined policies that may be associated with the request.
+- AWS stores policies as JSON documents that specify permissions for principal entities.
+- **Note** Only the Root Level user is granted access to all resources and services by default on AWS account.
+- All other IAM-users, IAM-Roles must have policies in place, which specify their access rights.
+- If no Policies exist for an IAM identity, the user will not have access to any services until a policy is created.
+#### Action/Operation
+- If a `request is authorized`, the action or operation `is executed`.
+- Operations are defined by a service, and include things that you can do to a resource, such (CRUD) that resource.
+- [Link for a complete list of Actions, Resources, and Condition Keys for Aws](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
+- **Examples**:
+  - **IAM support** roughly 40 actions including: (CRUD) 
+  - **AWS S3 support** a number of object and bucket operation including:
+    - `PutObject` action will place an object in an S3 storage Bucket. 
+    - `CreateBucket` action will create an S3 storage Bucket. 
+#### Resources
+- The operation or action performed in the last step will be applied to the relevant resource(s) whithin the AWS account.
+- An `object that exist within a service`, is known as `resource`.
+- Examples of resources include :
+  - IAM User Account, AWS S3 Bucket, Amazon EC2 instance, etc.
+- **Worth Noting** A request to perform an unrelated action on a resource will be denied by AWS.
 ---
 ## IAM Authentication & Security
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
