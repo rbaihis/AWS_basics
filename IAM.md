@@ -171,8 +171,8 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - Users from a corporate directory who use identity federation with SAML.
 - Cranting AWS account Access to a 3rd-parties for auditing resources deployed in the account. 
 - Roles are commonly used to grant EC2 instances, permission to execute actions on S3 storage.
-  - Ex: giving an EC2/Lambda/Others Instances permission to Read/write objects to an S3 bucket.
-  - **Note**: an EC2/Lamdba/Others instances deployed by any IAM identity, does not have permission to execute any action on S3, there for a role is required for that.
+  - **Ex**: giving an EC2/Lambda/Others Instances permission to Read/write objects to an S3 bucket.
+  - **Note**: an EC2/Lamdba/Others by default any `instances deployed by any IAM identity, does not have permission to execute any action on S3`, there for a role is required for that.
 ### Roles Can Be Used By
 - **Types of Trusted Entity**: (AWS service, Another AWS account, Web Identity, SAML 2.0 federation)
 - IAM-user in the same AWS account as the Role.
