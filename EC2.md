@@ -8,7 +8,7 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 
 ## Useful Links
 - [EC2 instance types](https://aws.amazon.com/ec2/instance-types)
-- 
+- [Storage for Root device type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device)
 ## Navigation
 
 ## EC2 Instance 
@@ -38,7 +38,7 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - AWS offers a substantial number of instances types and AMIs.
 - `Note` Tye of EC2 instances matters when chosing a persistant volumes, network Interfaces, Pods hosted numbers, consider limitations on your choice.
 - **Instance-Types Categories based on use cases**:
-  - [useful Link](https://aws.amazon.com/ec2/instance-types)
+  - [useful Link about instance types](https://aws.amazon.com/ec2/instance-types)
   - General Purpose -> family : T2, T3, T3a, M5, M6i, M6gd, etc
   - Compute Optimized -> family : C5, C6i, C6gd, etc
   - Memory Optimized -> family : R5, R6i, R6gd, etc
@@ -59,7 +59,7 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
   - **An AMI deployed using Amazon EBS**, is done so using an EBS snapshot (S-Shot is a point-in-time copy of an amazon EBS volume).
   - **An AMI launched from an instance Store**, is created using a template stored in Amazon S3 (Like glance images stored in Swift in an openstack environment). 
   - In both cases the EBS or Instance store contains the data regarding the operating system, application server, and applications to be installed on instance deployment.
-  - `Diffirence` between both two methods (here for more info)[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device]
+  - `Diffirence` between both two methods [here for more info](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device)
   - **Block Mapping**:
     - An AMI also `contains a block device mapping` which specifies `the persistent storage volume to attach`. This means when a snapshot is taken, it stores information regarding each volume that is attached to.
   - **Configuration Options Can Be Specified**:
