@@ -3,12 +3,11 @@
 ## Policies
 ## Roles
 - IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
-**Entities example**: 
-- IAM user in another account. 
-- Application code running on an EC2 instance needs to perfor actions on AWS resources. 
-- An AWS service that needs to act on resources in your account to provide its feature ex:EKS need role for EC2 to create its node groupe. 
-- Users from a corporate directory who use identity federation with SAML.
-</br>
+- **Entities example**: 
+  - IAM user in another account. 
+  - Application code running on an EC2 instance needs to perfor actions on AWS resources. 
+  - An AWS service that needs to act on resources in your account to provide its feature ex:EKS need role for EC2 to create its node groupe. 
+  - Users from a corporate directory who use identity federation with SAML.
 - **Types of Trusted Entity**:
   -
 - 
