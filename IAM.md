@@ -1,7 +1,21 @@
-# IAM
+# AWS-IAM
+
 ## Useful Links
 - [Link for a complete list of Actions, Resources, and Condition Keys for Aws](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 - [Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html)
+---
+## Navigation:
+- **[What is IAM](## What is IAM)**?
+- **[IAM Authentication & Security](## IAM Authentication & Security)**
+- **[IAM-Administration Decisions Helper](## IAM-Administration Decisions Helper)**
+- **[Users](## Users)**
+- **[Groups](##)**
+- **[Permissions](## Groups)**
+- **[Policies](## Policies)**
+- **[Roles](## Roles)**
+
+
+---
 ## What is IAM
 - AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is `Authenticated and Authorized to use resources`.
 - All AWS accounts start with `single sign-in identity` known as the `Root account`.
@@ -68,6 +82,7 @@ Once Authenticated the principal can make a request using either the `AWS Manage
 - Examples of resources include :
   - IAM User Account, AWS S3 Bucket, Amazon EC2 instance, etc.
 - **Worth Noting** A request to perform an unrelated action on a resource will be denied by AWS.
+- 
 ---
 ## IAM Authentication & Security
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
@@ -126,12 +141,13 @@ The report can be used to ensure compliance with credential life cycle requireme
 
 
 ---
-# IAM-Administration
+## IAM-Administration Decisions Helper
 - Viewing user access history before making changes or deleting a user from an AWS account. You may need to access information on how or when the account was last used.</br>
 AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detailed information for `(Groups,Users,Policies,Roles)`.
 </br>You can use `IAM-Credentianls-Report` download CSV file for an overview as well.
 
-## Permissions:
+---
+## Permissions
 - **Definition**: The specific privileges granted to a user, group, or role to perform actions on resources.
 - **Purpose**: To empower entities with the ability to perform specific tasks.
 - **Source**: Permissions are derived from the policies attached to an entity.
