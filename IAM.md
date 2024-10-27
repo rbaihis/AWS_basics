@@ -86,6 +86,14 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
     - `SSH-Keys` (SSH-Clients) - used when authenticating with SSH clients, and CodeCommit.
     - `Server Certificates`.
 ## Groups
+### Charecteristics
+- A group cannot be nested within another group.
+- There are no Default-Groups in AWS that automaticaaly include all existing users.
+- A user when Created does not create its own group by default (not like when creating users in Linux).
+- Ability to assign and manage permissions for multiple users using groups.
+- New Users can easily be added to a group an re-assigned to another group.
+- A single IAM-User can belong to 0 or multiple groups, and a single group can contain multiple users (ManyToMany relationship with IAM-Users).
+  </br> ![architecture group example](images/groupsExample.jpg)
 ## Policies
 ## Roles
 - IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
