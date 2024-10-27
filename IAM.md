@@ -6,7 +6,7 @@
 ---
 ## Navigation:
 - [What is IAM?](#what-is-iam)
-- [IAM Authentication & Security](#iam-authentication-&-security)
+- [IAM Authentication & Security](#iam-authentication-and-security)
 - [IAM-Administration Decisions Helper](#iam-administration-decisions-helper)
 - [Users](#users)
 - [Groups](#groups)
@@ -84,7 +84,7 @@ Once Authenticated the principal can make a request using either the `AWS Manage
 - **Worth Noting** A request to perform an unrelated action on a resource will be denied by AWS.
 - 
 ---
-## IAM Authentication & Security
+## IAM Authentication and Security
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
 - `Console access` authenticates using a `password, and MFA if inabled`.
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.
