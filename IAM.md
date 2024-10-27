@@ -5,18 +5,18 @@
 - [Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html)
 ---
 ## Navigation:
-- [What is IAM](#What-is-IAM-?)
-- [IAM Authentication & Security](#IAM-Authentication-&-Security)
-- [IAM-Administration Decisions Helper](#IAM-Administration Decisions Helper)
-- [Users](#Users)
-- [Groups](#Groups)
-- [Permissions](#Permissions)
-- [Policies](#Policies)
-- [Roles](#Roles)
+- [What is IAM?](#what-is-iam?)
+- [IAM Authentication & Security](#iam-authentication-&-security)
+- [IAM-Administration Decisions Helper](#iam-administration-decisions-helper)
+- [Users](#users)
+- [Groups](#groups)
+- [Permissions](#permissions)
+- [Policies](#policies)
+- [Roles](#roles)
 
 
 ---
-## What is IAM ?
+## What is IAM?
 - AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is `Authenticated and Authorized to use resources`.
 - All AWS accounts start with `single sign-in identity` known as the `Root account`.
 - This `Root user account` has complete access to all AWS services within the account.
