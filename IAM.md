@@ -1,3 +1,5 @@
+
+
 ## IAM Authentication & Security
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
 - `Console access` authenticates using a `password, and MFA if inabled`.
@@ -152,8 +154,8 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - Granular Control: Grant fine-grained permissions to specific resources and actions.
 - Flexibility: Customize policies to fit various use cases.
 - Complexity: Managing multiple inline policies can become complex.
-- Best Practice: Use for specific, unique permissions, and consider AWS managed policies for common scenarios.
-
+- Best Practice: Use for specific, unique permissions, and consider AWS managed policies for common scenarios.</br>
+![custom policy example](images/customPolicyExample.jpg)
 ## Roles
 - IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
 - **Entities example**: 
