@@ -4,6 +4,10 @@
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.
 - **Authentication Best Practices**:
   - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit by user.
+  - Assign Permissions to IAM users `using groups`.
+  - `Grant Least privilege` - this concept refers to `granting the lowest level of permissions` to an IAM identity to begin with, and gradually increase them as the need arises.
+    - most `AWS policies` come with diffirent options regarding the actions that can be performed within the service or resource.</br>
+    **options can include**: list, read, write, permissions management, or tagging.
   - Never sharing or publicly posting either a pw or secret access hey.
   - store access keys and secret access keys securely. preferably in an encrypted file.
   - Disable access keys that have not been used for some time.
@@ -12,9 +16,10 @@
   - When Possible , Use `IAM ROLES` to access AWS resources, rather than programmatically. -> this way the access key ID does not have to be hardcodes into the application.
     - **Benefits**: when configured correctly IAM will dynamically manage the credentials for you with temporary credentials hat are rotated automatically.
     - **Note**: `only possible` if recources requiring access are `running inside AWS`.
-  - **If Service Outside AWS**: require `programmatic access`, it's best to `create dedicated service accounts and policies` specifically for `each use case`.
-    - ![Policy for an application running outside AWS for S3 Bucket](images/customPolicy.jpg)
-  - 
+  - **If Service Outside AWS**: require `programmatic access`, it's best to `create dedicated service accounts and policies` specifically for `each use case`. Ex: ![Policy for an application running outside AWS for S3 Bucket](images/customPolicy.jpg)
+  - Use `temporary access credentials` from `AWS STS` (AWS security Token Services).
+    - this service meant to be used with `IAM Roles`, where a `trusted relationship between identities and resources` is established.
+    - thes access tokens are only valid for a certain period of time, which reduces any future risk of misuse.
   - 
 ## Users
 ## Groups
