@@ -2,7 +2,7 @@
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
 - `Console access` authenticates using a `password, and MFA if inabled`.
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.
-- **Authentication Best Practices**:
+### Authentication Best Practices:
   - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit by user.
   - Assign Permissions to IAM users `using groups`.
   - `Grant Least privilege` - this concept refers to `granting the lowest level of permissions` to an IAM identity to begin with, and gradually increase them as the need arises.
