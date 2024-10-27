@@ -4,7 +4,9 @@
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.
 ### Authentication Best Practices:
   - Never Use Root-Account unless Necessary.
-  - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit by user.
+  - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit.
+  - Each individual in an organization should have their own account with unique access credentials for better audit.
+  - A Password policy should always be implimented, in order to ensure each user establishs a secure password.
   - Assign Permissions to IAM users `using groups`.
   - `Grant Least privilege` - this concept refers to `granting the lowest level of permissions` to an IAM identity to begin with, and gradually increase them as the need arises.
     - most `AWS policies` come with diffirent options regarding the actions that can be performed within the service or resource.</br>
@@ -47,6 +49,22 @@ The report can be used to ensure compliance with credential life cycle requireme
 - **Report Include Info Such**:
   - user, arn, userCreationTime, pwEnabled?, pwLastUsed, pwLastChanged, pwNextRotation,  accessKey1LastRotated, accessKey1LastUsed, accessKey2Active, ..., cert1Active, cert1LastRotated, ... . 
 ## Users
+- An IAM-User consist of a name and credentials. The user is an entity that represents the person or application interacting with an AWS service.
+- When we initially set up an AWS account, we're logged in as the Root User. The root account has access to all services by default.
+- By default an IAM User account cannot access any services within the AWS account, until policies are created.
+- **Important Points on IAM**:
+  - An IAM-User that is created to `represent applications` are Known as `Service accounts`.
+  - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit.
+  - Each individual in an organization should have their own account with unique access credentials for better audit.
+  - A Password policy should always be implimented, in order to ensure each user establishs a secure password.
+  - **Ther are `3 ways an IAM-User is Identified by AWS`**:
+    - UserName, ARN - Amazon Resource Name (used to uniquely identify the user across all of AWS), ID - Unique Identifier (only returned when using the API, PowerShell, or AWS CLI)
+    - A `single AWS account` can have up to `5000` users.
+  - **IAM-User can Auth and Access AWS in `4 ways`**:
+    - `AWS-Console-Password` (web-browser) used to sign in to AWS Management Console
+    - `Access-Keys` (AWS-CLI, AWS-PowerShell-tools)- used for programmatic calls to AWS. 
+    - `SSH-Keys` (SSH-Clients) - used when authenticating with SSH clients, and CodeCommit.
+    - `Server Certificates`.
 ## Groups
 ## Policies
 ## Roles
