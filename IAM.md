@@ -17,7 +17,7 @@
   - **AWS CLoudTrail** is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account.
 - IAM is `integrated with many AWS-Services`, including:
   - Compute, Container, Storage, DB, Developer Tools, Security, Identity and Many more.
-  - Complete List (here)[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html]
+  - Complete List [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html)
 - `IAM Data` is `Eventually Consistant`, changes made to updataing IAM-Identities or policies are stored and replicated across multiple servers withis AWS's data Centers around the world.
 ### How IAM Can Be Accessed
 - (Web Browser) AWS Management Console
