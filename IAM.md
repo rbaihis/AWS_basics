@@ -1,7 +1,7 @@
 # IAM
 ## Useful Links
 - [Link for a complete list of Actions, Resources, and Condition Keys for Aws](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
-- (Exaustive list of AWS services)[https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html]
+- [Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html)
 ## What is IAM
 - AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. You use IAM to control who is `Authenticated and Authorized to use resources`.
 - All AWS accounts start with `single sign-in identity` known as the `Root account`.
