@@ -1,6 +1,8 @@
 # AWS-IAM
 
 ## Useful Links
+<a href="[http://example.com/](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)" target="_blank">Link for a complete list of Actions, Resources, and Condition Keys for Aws</a>
+<a href="Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html" target="_blank">Exaustive list of AWS services</a>
 - [Link for a complete list of Actions, Resources, and Condition Keys for Aws](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html){:target="_blank"}
 - [Exaustive list of AWS services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html){:target="_blank"}
 ---
