@@ -1,4 +1,5 @@
 ## IAM Authentication & Security
+
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.</br>
 `Console access` authenticates using a `password, and MFA if inabled`.</br>
 `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.</br>
