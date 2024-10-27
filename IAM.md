@@ -87,6 +87,8 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
     - `Server Certificates`.
 ## Groups
 ### Charecteristics
+- Group can be granted Permissions, Organized way to group meaningful policies in groups for better GLP-concept.
+- Groups allows better organization for minimizing the overhead of assigning policies directly to users.  
 - A group cannot be nested within another group.
 - There are no Default-Groups in AWS that automaticaaly include all existing users.
 - A user when Created does not create its own group by default (not like when creating users in Linux).
@@ -94,6 +96,8 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - New Users can easily be added to a group an re-assigned to another group.
 - A single IAM-User can belong to 0 or multiple groups, and a single group can contain multiple users (ManyToMany relationship with IAM-Users).
   </br> ![architecture group example](images/groupsExample.jpg)
+### Administration Actions
+-
 ## Policies
 ## Roles
 - IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
