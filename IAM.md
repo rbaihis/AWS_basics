@@ -4,7 +4,7 @@
 - `Console access` authenticates using a `password, and MFA if inabled`.</br>
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.</br>
 - **Authentication Best Practices**:
-  - 
+- 
 
 ## Users
 ## Groups
