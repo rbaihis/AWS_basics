@@ -3,6 +3,7 @@
 - `Console access` authenticates using a `password, and MFA if inabled`.
 - `Programmatic access` authenticates using an `Access Key ID, and Secret Access Key`.
 ### Authentication Best Practices:
+  - Never Use Root-Account unless Necessary.
   - Each IAM user has `their own account`, no sharing accounts between multiple users for better audit by user.
   - Assign Permissions to IAM users `using groups`.
   - `Grant Least privilege` - this concept refers to `granting the lowest level of permissions` to an IAM identity to begin with, and gradually increase them as the need arises.
