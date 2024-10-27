@@ -1,5 +1,5 @@
 
-
+---
 ## IAM Authentication & Security
 - In AWS two main types of authentication include `conole(web-interface)` and `programatic(CLI, AWS PowerShell tools)`.
 - `Console access` authenticates using a `password, and MFA if inabled`.
@@ -78,7 +78,7 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
   - Attach directly a custom or pre-configured policy directly to the IAM-User.
   - Set Permission Boundaries (They override any other policies that might grant more permissive access then what is defined in it).
 
-
+---
 ## Users
 - An IAM-User consist of a name and credentials. The user is an entity that represents the person or application interacting with an AWS service.
 - When we initially set up an AWS account, we're logged in as the Root User. The root account has access to all services by default.
@@ -97,7 +97,7 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
     - `SSH-Keys` (SSH-Clients) - used when authenticating with SSH clients, and CodeCommit.
     - `Server Certificates`.
 
-
+--
 ## Groups
 ### Charecteristics
 - Groups allows better organization for minimizing the overhead of assigning policies directly to users.  
@@ -115,7 +115,7 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - Add & Remove IAM-Users in IAM-Groups.
 - Attaching a Policy to IAM-Groups
 
-
+---
 ## Policies
 - Policies are used to manage access rights to an AWS account.
 - A Policy is an Object in AWS.
@@ -156,6 +156,8 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - Complexity: Managing multiple inline policies can become complex.
 - Best Practice: Use for specific, unique permissions, and consider AWS managed policies for common scenarios.</br>
 ![custom policy example](images/customPolicyExample.jpg)
+
+---
 ## Roles
 - IAM-Roles is an IAM-Identity that is linked to a policy which governs access permissions. they are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access.
 - A Role is intended to be used by any `person Or application` thay needs the permissions and policies associated with it.
@@ -179,3 +181,7 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - IAM-user in a `diffirent AWS account` than the role.
 - A web-service `offered by AWS` such as EC2.
 - An External-User authenticated by an `external identity provider (IDP) service` that is compatible with `SAML 2.0` or `OpenId Connect` or a `Custom-built Identity broker`.
+### Playing with Roles
+- **Ex: with EC2 to Access S3-Bucket**:
+  - `IAM-Dashboard > Roles > Select Trusted Entity (AWS-Service) > Chose a Use Case (EC2-allAwsServiceAccess) > Select Policies(AmazonS3FullAccess) > Add Tags(optionally)`> Name it > Create > Update Max Session Duration(optionally)`.
+  - **When Deploying EC2** add this role to the EC2 instance, and your EC2 can now uses S3 services from your Ec2.
