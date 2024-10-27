@@ -54,7 +54,20 @@ The report can be used to ensure compliance with credential life cycle requireme
 - Viewing user access history before making changes or deleting a user from an AWS account. You may need to access information on how or when the account was last used.</br>
 AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detailed information for `(Groups,Users,Policies,Roles)`.
 </br>You can use `IAM-Credentianls-Report` download CSV file for an overview as well. 
-
+## Permissions:
+- **Definition**: The specific privileges granted to a user, group, or role to perform actions on resources.
+- **Purpose**: To empower entities with the ability to perform specific tasks.
+- **Source**: Permissions are derived from the policies attached to an entity.
+- **In essence**: Permissions are the actual privileges granted to entities based on those blueprints(Policies).
+- **Do Not Confuse Policies with Permission**:
+  - **Policies** : are the rules, the blueprints that define the rules.
+  - **Permissions**: are the privileges granted based on those rules.
+### Managing Permission Options
+- Changin IAM-User permissions:
+  - Add User to a IAM-Group which is governed under the desired policies(rules).
+  - Copy permission from another User and attach them to the IAM-User desired.
+  - Attach directly a custom or pre-configured policy directly to the IAM-User.
+  - Set Permission Boundaries (They override any other policies that might grant more permissive access then what is defined in it).
 ## Users
 - An IAM-User consist of a name and credentials. The user is an entity that represents the person or application interacting with an AWS service.
 - When we initially set up an AWS account, we're logged in as the Root User. The root account has access to all services by default.
