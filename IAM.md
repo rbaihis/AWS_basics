@@ -31,8 +31,9 @@
 - **When MFA enabled** the auth-sequence will look as follow:
   - User > PW Credential > MFA Authenticating presented > Success
   - `Steps`:
-    1 Knowledge based Credentials : either  (AccId || AccAlias) or (Email && PW Combo)
-    2 MFA includes (Possession or Inheritance) Test
+    1. Knowledge based Credentials : either  (AccId || AccAlias) or (Email && PW Combo).
+    1. IF(KBC -> success) - MFA includes (Possession or Inheritance) Test
+    1. User is granted access upon successful Auth of Both security Layers 
 
 ## Users
 ## Groups
