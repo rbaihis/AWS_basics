@@ -23,7 +23,17 @@
   - Use `temporary access credentials` from `AWS STS` (AWS security Token Services).
     - this service meant to be used with `IAM Roles`, where a `trusted relationship between identities and resources` is established.
     - thes access tokens are only valid for a certain period of time, which reduces any future risk of misuse.
-  - 
+### Rotating IAM-USERS Access Keys 
+- **Steps**:  `IAM > Users > check column (Access-Key-Age & Last-Activity) > Select-Intended-User > Security Credentials > Make old Key inactive && Create access key`
+### IAM Multi-Factor Auth (MFA)
+- MFA requires a user to authenticate using credentials from `Two Distincs categories`, these categories includes `Knowledge(pw,pins,securityQuests), Possession(your devices), Inheritance(what you are)`.
+</br> ![auth categories](images/authCategories.jpg)
+- **When MFA enabled** the auth-sequence will look as follow:
+  - User > PW Credential > MFA Authenticating presented > Success
+  - `Steps`:
+    1 Knowledge based Credentials : either  (AccId || AccAlias) or (Email && PW Combo)
+    2 MFA includes (Possession or Inheritance) Test
+
 ## Users
 ## Groups
 ## Policies
