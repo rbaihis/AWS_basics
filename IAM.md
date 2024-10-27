@@ -185,4 +185,4 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - **Ex: with EC2 to Access S3-Bucket**:
   - `IAM-Dashboard > Roles > Select Trusted Entity (AWS-Service) > Chose a Use Case (EC2-allAwsServiceAccess) > Select Policies(AmazonS3FullAccess) > Add Tags(optionally)`> Name it > Create > Update Max Session Duration(optionally)`.
   - **When Deploying EC2** add this role to the EC2 instance, and your EC2 can now uses S3 services from your Ec2.
-    </br>![using roles with EC2 to access AWS S3 service from within the EC2 instance](images/usingRole.jpg)
+    </br>![using roles with EC2 to access AWS S3 service from within the EC2 instance applications running on it](images/usingRole.jpg)
