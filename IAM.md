@@ -115,7 +115,44 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 
 
 ## Policies
-
+- Policies are used to manage access rights to an AWS account.
+- A Policy is an Object in AWS.
+- A Policy can be attached to an identity in AWS, Including  IAM-(Groups,Users,Roles).
+- A policy can also be attached to a `Resource`.
+- A policy defines the permissions and access rights of the identities and resources it is attached to.
+- AWS will evalute a policy when an (IAM-User or IAM-Role) makes a request to a service or resource.
+- AN AWS Policy will either `Accept` or `Deny` a request.
+- Most Policies in AWS are stored as `JSON documents`.
+### Policies Types
+- **Identity-based policies**
+  - specify the permission of IAM-identities this includes:
+    - Users, Groups to wich users belong, and Roles. 
+- **Resource-based policies (Inline-Policy)**
+  - Grant resource level permissions to the `principal identity` specified on the policy.
+  - Also known as `Inline policy`.
+    - this means the policy `must be embedded in an IAM-Identity.
+    - the policy itself is an inherent part of the identity.
+  - Use Resource-Based Policies when it's `important to have a strict one-to-one relationship` between the policy and the identity.
+     - This ensures that the policy is not mistakenly attached to the wrong identity. 
+- **Permission Boundaries**
+- **Organization SCPs**
+- **Access Control Lists (ACLs)**
+- **Session Policies**
+- **Note**: Cloud Practitioner Exam focuses primarily on (identity & resources) based policies.
+#### IAM Inline Policies
+- Resource-based policies are inline policies.
+- Resource-based policies can only be added directly to a single user, group, or role.
+- In addition to custom inline policies, `AWS has managed policies which fall into 2-Categories`:
+  - **AWS Managed Policies** - Preconfigured policies that are created and managed by AWS.
+  - **Custom Managed Policies** - Policies that are managed by the `AWS-Customer`.
+    - offers more precise control than AWS managed policies.
+##### IAM Custom Policies
+- Tailored Permissions: Create highly specific policies to meet unique access control needs.
+- Direct Attachment: Directly attached to IAM entities (users, groups, or roles).
+- Granular Control: Grant fine-grained permissions to specific resources and actions.
+- Flexibility: Customize policies to fit various use cases.
+- Complexity: Managing multiple inline policies can become complex.
+- Best Practice: Use for specific, unique permissions, and consider AWS managed policies for common scenarios.
 
 ## Roles
 - IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
