@@ -157,17 +157,25 @@ AWS-Mangement-Console is equipped with an `Access-Advisor` wich provides detaile
 - Best Practice: Use for specific, unique permissions, and consider AWS managed policies for common scenarios.</br>
 ![custom policy example](images/customPolicyExample.jpg)
 ## Roles
-- IAM roles are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access. </br>
-- **Entities example**: 
-  - IAM user in another account. 
-  - Application code running on an EC2 instance needs to perfor actions on AWS resources. 
-  - An AWS service that needs to act on resources in your account to provide its feature ex:EKS need role for EC2 to create its node groupe. 
-  - Users from a corporate directory who use identity federation with SAML.
-- **Types of Trusted Entity**: (AWS service, Another AWS account, Web dentity, SAML 2.0 federation)
+- IAM-Roles is an IAM-Identity that is linked to a policy which governs access permissions. they are a secure way to grant permission to entities that you trust, IAM roles issue keys that are valid for short durations, making them a more secure way to grant access.
+- A Role is intended to be used by any `person Or application` thay needs the permissions and policies associated with it.
+- Unlike IAM-Users, a role does not have standard long-term credentials such as a PW or Access-Key.
+- When a role is assumed by an application or user, temporary credentials are created for the role session.
 - **Roles Attributes**: name, description, Trusted entities(Aws service, Web, ... ), Policies, Permissions boundary, Maximum session duration(default 1h), ARN, Instance Profile ARNs.
-**common usecases**:
+### Common Use Cases:
+- When we need to grant permission to users, application, or services `that don't typically have access to your AWS resources`.
+- An AWS service that needs to act on resources in your account to provide its feature ex:EKS need role for EC2 to create its node groupe.
+- Application code running on an EC2 instance needs to perform actions on AWS resources.
+- Grant users in one AWS-account access to an Other AWS account .
+- Allowing mobile apps to use AWS without having to embed AWS keys within the app.
+- Users from a corporate directory who use identity federation with SAML.
+- Cranting AWS account Access to a 3rd-parties for auditing resources deployed in the account. 
 - Roles are commonly used to grant EC2 instances, permission to execute actions on S3 storage.
   - Ex: giving an EC2/Lambda/Others Instances permission to Read/write objects to an S3 bucket.
   - **Note**: an EC2/Lamdba/Others instances deployed by any IAM identity, does not have permission to execute any action on S3, there for a role is required for that.
-  
--  
+### Roles Can Be Used By
+- **Types of Trusted Entity**: (AWS service, Another AWS account, Web Identity, SAML 2.0 federation)
+- IAM-user in the same AWS account as the Role.
+- IAM-user in a `diffirent AWS account` than the role.
+- A web-service `offered by AWS` such as EC2.
+- An External-User authenticated by an `external identity provider (IDP) service` that is compatible with `SAML 2.0` or `OpenId Connect` or a `Custom-built Identity broker`.
