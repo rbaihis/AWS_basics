@@ -76,3 +76,13 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
     - `AWS Marketplace AMIs` - AMIs which are developed by third parties and available in AWS (Cost associated for using it).
     - `Community AMIs` - AMIs developed by the community based projects can be used under a general license (Free).
     - `MyAMIs` - AMIs which are created by the account owner.
+      
+### Creating AMI From Existing Instance:
+- this approach below is similar to `docker commit runningContainer newImageName` but with VMs (Ignore it if unfamiliar with docker).
+- when creating an AMI from an existing EC2 instance, it will contain the following informations:
+  - All of the information included in a Launch Template.
+  - Software related component such as OS, App-Server, and any applications currently exist in instance.
+  - One or More (Amazon EBS) snapshots.
+  - Launch permissions that control wich AWS accounts can use the AMI to launch instances.
+  - A block device mapping that specifies the volumes to attach to the instance when its launched.
+![Creating AMI Image from my Existing Instance](images/createAMIfromInstance.gif)
