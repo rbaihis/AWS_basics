@@ -15,12 +15,13 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 >>`Auto-Scaling Groups`
 
 ## Navigation
+- [Load Balancer Overview](#Load-Balancer-Overview)
 - [Elastic Load Balancer - ELB](#Elastic-Load-Balancer---ELB)
+  - [ELB Load Balancer Types](#ELB-Load-Balancer-Types)
 - [](#)
 - [](#)
 - [](#)
-- [](#)
-- [](#)
+- [ELB + ASG ](#ELB-+-ASG)
 - [](#)
 - [](#)
 - [](#)
@@ -30,10 +31,11 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 - [](#)
 - [](#)
 
-# Load Balancer Overview
+## Load Balancer Overview
 Load balancer processes incoming requests based on preconfigured rules and distributes them amon several instances to ensure that all traffic is routed to healthy targets.
 >If a single instance has maxed out its resource capacity, any additional network load will be routed to the remaing healthy instances within the group.
 >The load balancer acts as a single point of access to an application and routinely `conducts health checks on all **registred targets**`.
+
 
 ## Elastic Load Balancer - ELB
 > An `ELB` can be configured to direct incomming traffic by specifying one or more listeners.
@@ -41,13 +43,22 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 > A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
 
 > `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
-### ELB Load Balancer Types:
+### ELB Load Balancer Types
 - **Application Load Balancers**: (OSI Model `Layer-7 LB`) it `operates at the request level`.
   - ALBs are suited for HTTP/HTTPS requests.
   - ALBs offers a broad range of routing rules for incoming requests. this includes:
     - host-name, HTTP-Headers, SourceIP, PortNumber.
-- **Network Load Balancers**: (ODI Model `Layer-4 LB`) `it operates at the connection level`.
+- **Network Load Balancers**: (OSI Model `Layer-4 LB`) `it operates at the connection level`.
   - NLBs are suited for TCP, UDP and TCP-TLS connections encrypted.
   - NLBs are `designed for very high performance workloads`.
-- **GateWay Load Balnceres**:
+- **GateWay Load Balnceres**: (OSI Model `Layer-3 LB`) `it operates at the Network level`.
+  - They simply route traffic based on IP addresses and port numbers.
+  - They are primarily used to distribute network traffic to network appliances like firewalls, intrusion detection systems, and VPNs.
+  - `Note` do not assume that `Spring Gateway as GLBs` springGW uses internally a layer-7 ALBs to route traffic. 
 - **Classic Load Balancers**: (to be dropped or already dropped from AWS)
+
+
+## Auto-Scaling Groups
+
+
+## ELB + ASG 
