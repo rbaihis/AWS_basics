@@ -22,6 +22,8 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - [Security Groups](#Security-Groups)
 - [IAM Roles With EC2](#IAM-Roles-With-EC2)
   - [Working with IAM Roles and EC2](#Working-with-IAM-Roles-and-EC2)
+- [Launch an EC2 Instance From Template](#Launch-an-EC2-Instance-From-Template)
+  - [Generating A launch Template](#Generating-A-launch-Template)
 - [SSH With EC2](#SSH-With-EC2)
   
 ## EC2 Instance 
@@ -154,6 +156,49 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 ## IAM Roles With EC2
 - IAM roles can be used within an AWS resource, to grant permissions to applications running on the EC2 instance in our case, to access specified services and resources on AWS.
 ### Working with IAM Roles and EC2
+- In this example we will `create a Role full access to S3 service` and assign it to the EC2 instance
+1. Navigate to IAM-Roles console
+2. Create Role name it ec2s3fullaccess
+3. Chose type of `trusted entities` as **service**.
+4. Attach the policy `AmazonS3FullAccess` to the role.
+5. Update session(optionally DefaultVal:1h)
+6. Create the Role.
+7. Navigate back to the EC2 instance
+8. Right click on the instance
+9. Select Security > Modify IAM role > Select the `ec2s3fullaccess` > save
+10. A success message will appear => Now that the IAM-Role is attached to the instance, any application running on the instance `will have full access to perform any actions on the S3 service`
 
+## Launch an EC2 Instance From Template
+- A `Launch Template` offers a more efficient way to launch one or multiple instances based on saved configuration setting from previous instances.
+- Avoid having to specify:
+  - Instance Type, Network Settings, Storage, Security Groups, Keys, Roles, etc.
+- Instance templates can be versioned.
+- Each version of an instance template can have unique launch parameters if needed.
+- **Ways to Create Launch Template**:
+  - From scratch
+  - Generating it from an existance instance that you wish to have the template from.
+  - From an other Template that u desire to do new version from It.
+### Generating A launch Template
+- in this example lets assume we will generate it from an existing template.
+- **Creation Steps**:
+  1. Navigate to the desired EC2 instance
+  2. Right click > Image and templates > Create Template From Instance
+  3. Name it > Description(useful) > Tag it for best practices
+  4. Ignore EC2 auto scaling for now
+  5. Launch template content > Check the Security Group desired > Other option (keep it Or modify it, based on your use case)
+  6. Before you save it > Advanced Details > User Data (check if you want what is there or not)
+  7. Create Launch template
+- **Steps to Launch Instance based on Launch Template**
+  1. Navigate to EC2 Instance Launch Template
+  2. Select the desired Template > Actions > Launch Instance from Template
+  3. Done its creating.
 
 ## SSH With EC2
+- SSH is a secure protocol that allows you to access your server remotely and perform many action on it.
+- Prerequirement:
+  1. Must have created an SSH-KEY and added the public key during instance creation to the EC2.
+  2. Store the SSH-keys in your SSH-client in ~/.ssh directory.
+  3. Your Security Group attached to the EC2 must allow Inbound TCP traffic to Port 22 typically Default unless changed.
+  4. Make sure to add Rule SSH with Protocol TCP on Port 22 From Source 0.0.0.0/0 if ur remote SSH client uses Dynamic IP-Addresses.
+  5. finally SSH to your Remote Server EC2 instance:
+     - `ssh ec2Username@instanceDnsOrIpAddress -i ~/.ssh/yourPrivateKey` => and you re connected.
