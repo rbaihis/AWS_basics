@@ -7,7 +7,7 @@ In this part we will focus on `horizontally resource scaling` also known as `sca
 `High availibility` infers the ability to store data redundantly across multiple Azs, as well as having your solution always up and functional and it's down-time close to 0 even in disasters.<br>
 `Elasticity` is the ability to accuire resources as you need them and release thes resources when you no longer need them without the need for explicit human intervention.</br>
 AWS high abilibility for cloud workloads can be achieved across three service groups (EC2, RDS and others MDB, Storage services[S3, EFS, EBS] ).</br>
->**For Max Availibiliy** from EC2, an architecture invilving `ELB`, `Multiple AZs`, `ASGs` should be implemented.
+>**For Max Availibiliy** from EC2, an architecture involving `ELB`, `Multiple AZs`, `ASGs` should be implemented.
 
 >**`ELastic Load Balancers(ELB)` and `Auto-Scaling Groups(ASG)`**, Automatically and dynamically distribute traffic load between multiple instances.
 >**Elasticity** can be `effectively managed` using two methods.
