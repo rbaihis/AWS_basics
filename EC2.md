@@ -22,14 +22,6 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - [Security Groups](#Security-Groups)
 - [IAM Roles With EC2](#IAM-Roles-With-EC2)
 - [SSH With EC2](#SSH-With-EC2)
-- #EC2 Instance
-  - #EC2 Instance Core Feature
-  - #EC2 Instances Types - Flavors
-- #AMI - Amazon Machine Image
-  - #Creating AMI From Existing Instance
-- #Elastic IP
-  - #Working With ElasticIPs
-
   
 ## EC2 Instance 
 - EC2 instances are scalable virtual computing environments.
