@@ -79,11 +79,12 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 
 
 ## ELB + ASG Together
-> How to create an ELB integrated with an ASG.
+How to create an ELB integrated with an ASG.
 >Steps:
-1. 
-2.
-> 
+>  1. h
+>  2. hi
+>  3. 
+   
 
  
 
