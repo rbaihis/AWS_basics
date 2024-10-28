@@ -21,7 +21,7 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 - [](#)
 - [](#)
 - [](#)
-- [ELB + ASG](#ELB-+-ASG)
+- [ELB and ASG Together](#ELB-and-ASG-Together)
 - [](#)
 - [](#)
 - [](#)
@@ -58,7 +58,34 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 - **Classic Load Balancers**: (to be dropped or already dropped from AWS)
 
 
-## Auto-Scaling Groups
+## Auto-Scaling Groups - ASG
+>An ASG contains a `collection of EC2s instances` that are `treated as a logical grouping` for the purpose of **automatic scaling and management**.
+
+>ASG will **define** the `minimum and maximum number` of `Healthy` instances that **must** be in operations, to dynamically meet changing application load conditions.
+>> this means the ASG can both Scale-Out until reaching maximum val, and Scale-In until it reachs its minimum val when load is low and vcan be handled by the minimum instances defined.
+
+>ASG `define maximum` number of healthy instnaces, for billing purposes, mitigating unlimited scaling in case of DDOS attack, and for the CLoudProvider itself to have better predection for managing its own resources.
+
+> ASG is considered a `single target` for the ELB, ELB relies on ASG is server registry to identify the inner targets to destribute traffic to them dynamically. So no manual adding or removing instances from the ELB when Scaling out or in.
+> **summary**
+- ASGs are designed to dynamically meet the changing needs of application load.
+- ASGs are `perfect` for `keeping up with cyclical changes in application load` (scales In & Out).
+- ASGs can also scale instance based on a `fixed schedule` (prediction case).
+- ASGs can be scaled based on `custom scaling criteria using metrics from CloudWatch` (Sorry Prometheus can't do that without hooks).
+- ASGs will auto deploy instances based on `pre-configured Launch templates`.
+- ASGs `routinely` perform health checks on EC2 instances, and `replaces instances that fail the check`.
+- An ASG can be configured to ensure a specified number of healthy instances which are operational at all times.
+- ASGs can automatically register new instances to a load balancer.
 
 
-## ELB + ASG
+## ELB + ASG Together
+> How to create an ELB integrated with an ASG.
+>Steps:
+1. 
+2.
+> 
+
+ 
+
+
+
