@@ -21,6 +21,7 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - [Working With ElasticIPs](#Working-With-ElasticIPs)
 - [Security Groups](#Security-Groups)
 - [IAM Roles With EC2](#IAM-Roles-With-EC2)
+  - [Working with IAM Roles and EC2](#Working-with-IAM-Roles-and-EC2)
 - [SSH With EC2](#SSH-With-EC2)
   
 ## EC2 Instance 
@@ -120,8 +121,39 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
   2. `Actions > Associate ElasticIp > Resource Type (select instance) > Instance (chose the desired Instance) > Associate`
 
 ## Security Groups
-
+- A security group acts as a virtual firexall for your instance to control inbound and outbound traffic.
+- When an Instance is launched within a `VPC`, it can be assigned to up to `5 Security Groups`.
+- If an EC2 instance is launched `without specifing a Security Group`, it will automatically be assigned to the `Default Security Group` for the `VPC`.
+- A Security Group is composed of `rules`. these rules `define the parameters of the firewall which guards your instances`.
+- The rules are enforced by filtering traffic based on `protocols and port numbers`.
+- Rules for Security group can be `added or removed`. (also refered to as authorizing or revoking inbound or outbound access).
+- The security group rules are divides into inbound and outbound rules.
+- You can define separate rules for both inbound and outbound traffic.
+- AWS permits specifying `Allow rules`, but `Not deny rules`.
+- When a Security group is created, it has no inbound rules by default. This means all inbound traffic originating from another host will be denied until inbound rules are configured (Least Privelege Concept).
+- By Default, a security group will have a rule that allows all outbound traffic, can be configured to restrict outbound traffic.
+- Default Security Group can not be deleted.
+- **Rules contains**:
+  - `Type`(custom,All,Single) : All traffic, HTTP, SSH, POP3 ICMP(ping), IMAPS, SMTP, NFS, etc
+    - (All, Custom) are for Common layer transfer protocols such UDP, TCP, ICMP.
+    - (Single) are for Popular types such  HTTP, SSH, POP3 ICMP(ping), IMAPS, SMTP, NFS, DNS(UDP), DNS(TCP), MSSQL, SMB, LDAP, etc
+  - `Protocol`: TCP, UDP
+  - `Port range`: can be a range or a single value
+  - `Source`(Inbound Rule): From Where expecting traffic, 0.0.0.0/0-IPv4 or ::/0-IPv6 -> does not matter from where it comming.
+  - `Destination`(Outbound Rule): To Where traffic allowed to go , 0.0.0.0/0-IPv4 or ::/0-IPv6 -> does not matter To where.
+  - `Description`: (optional for readability)
+### Working With Security Group
+- Create a Security Group
+  - Name it
+  - Specify the VPC where ur expected instance(s) will be attached to.
+  - Check the Default Rules if they re convinient to your use case.
+  - Modify, remove or add Rules as you see fit.
+  - Create Security Group
+  - Finally add The Security to Your Instance.
 
 ## IAM Roles With EC2
+- IAM roles can be used within an AWS resource, to grant permissions to applications running on the EC2 instance in our case, to access specified services and resources on AWS.
+### Working with IAM Roles and EC2
+
 
 ## SSH With EC2
