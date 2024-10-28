@@ -21,7 +21,7 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 - [](#)
 - [](#)
 - [](#)
-- [ELB + ASG ](``#ELB-+-ASG``)
+- [ELB + ASG](#ELB-+-ASG)
 - [](#)
 - [](#)
 - [](#)
@@ -61,4 +61,4 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 ## Auto-Scaling Groups
 
 
-## ELB + ASG 
+## ELB + ASG
