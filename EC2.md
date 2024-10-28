@@ -10,11 +10,12 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - [EC2 instance types](https://aws.amazon.com/ec2/instance-types)
 - [Storage for Root device type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device)
 - [Finding an AMI that meet your EC2 requirement](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html)
+  
 ## Navigation
 - [EC2 Instance](#EC2-Instance)
   - [EC2 Instance Core Feature](#EC2-Instance-Core-Feature)
   - [EC2 Instances Types - Flavors](#EC2-Instances-Types---Flavors)
-- [AMI - Amazon Machine Image](AMI---Amazon-Machine-Image)
+- [AMI - Amazon Machine Image](#AMI---Amazon-Machine-Image)
   - [Creating AMI From Existing Instance](#Creating-AMI-From-Existing-Instance)
 - [Elastic IP](#Elastic-IP)
 - [Working With ElasticIPs](#Working-With-ElasticIPs)
