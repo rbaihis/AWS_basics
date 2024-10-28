@@ -14,7 +14,7 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 >>`Auto-Scaling Groups`
 
 ## Navigation
-- [Elastic Load Balancer - ELB](#Elastic-Load-Balancer-ELB)
+- [Elastic Load Balancer - ELB](#Elastic-Load-Balancer---ELB)
 - [](#)
 - [](#)
 - [](#)
@@ -35,4 +35,16 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 >The load balancer acts as a single point of access to an application and routinely `conducts health checks on all **registred targets**`.
 
 ## Elastic Load Balancer - ELB
-> An `ELB` can be con
+> An `ELB` can be configured to direct incomming traffic by specifying one or more listeners.
+> A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
+> `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
+### ELB Load Balancer Types:
+- **Application Load Balancers**: (OSI Model `Layer-7 LB`) it `operates at the request level`.
+  - ALBs are suited for HTTP/HTTPS requests.
+  - ALBs offers a broad range of routing rules for incoming requests. this includes:
+    - host-name, HTTP-Headers, SourceIP, PortNumber.
+- **Network Load Balancers**: (ODI Model `Layer-4 LB`) `it operates at the connection level`.
+  - NLBs are suited for TCP, UDP and TCP-TLS connections encrypted.
+  - NLBs are `designed for very high performance workloads`.
+- **GateWay Load Balnceres**:
+- **Classic Load Balancers**: (to be dropped or already dropped from AWS)
