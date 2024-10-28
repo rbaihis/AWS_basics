@@ -21,7 +21,7 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 - [](#)
 - [](#)
 - [](#)
-- [ELB + ASG ](#ELB-+-ASG)
+- [ELB + ASG ](``#ELB-+-ASG``)
 - [](#)
 - [](#)
 - [](#)
