@@ -36,7 +36,7 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 
 ## Elastic Load Balancer - ELB
 > An `ELB` can be configured to direct incomming traffic by specifying one or more listeners.
-> 
+
 > A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
 > `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
 ### ELB Load Balancer Types:
