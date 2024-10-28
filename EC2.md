@@ -19,8 +19,9 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
   - [Creating AMI From Existing Instance](#Creating-AMI-From-Existing-Instance)
 - [Elastic IP](#Elastic-IP)
 - [Working With ElasticIPs](#Working-With-ElasticIPs)
-- []()
-- []()
+- [Security Groups](#Security-Groups)
+- [IAM Roles With EC2](#IAM-Roles-With-EC2)
+- [SSH With EC2](#SSH-With-EC2)
 - #EC2 Instance
   - #EC2 Instance Core Feature
   - #EC2 Instances Types - Flavors
@@ -42,7 +43,9 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
   - `Note` type of EC2 instances matters when chosing a persistant volume since some type offers multiple choices while others only offers ESB only ass attachment Volumes.
 - EC2 instances, and ESB volumes can be launched in multiple regions and availibility zones.
 - `Firewalls` can be configurated through AWS. using `Security Groups`.
-- Note That, when deployed, each instance has an IPv4 address standard and Public , this Public feature is called `(Elastic IP)`, ELastic IPs can be associated and disassiociated from EC2 instance which makes them flexible and transfable under the same region.
+- when deployed, each instance has an IPv4 address standard and Public , this Public feature is called `(Elastic IP)`, ELastic IPs can be associated and disassiociated from EC2 instance which makes them flexible and transfable under the same region.
+- Note that if disassociated the ElasticIP, you still have publicIPs, but PublicIp that re not ElasticIPs can changes and are not flexibal and reliable as the ElasticIPs.
+- EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
 
 ### EC2 Instance Core Feature
 - Deploy virtual machines
@@ -113,5 +116,20 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - Before deleting an Elastic IP, it's good practice to confirm it is not associated with any operational Instance.
 - Flexibility for 0 down time :
   - `Administrator duplicate instnace prod > update new instance > test new instance > disassoiate ElasticIP from instance prod > assosiate it to the new updated instance`
-  - Many other use cases for ElasticIP flexibilities can be benificial.
+  - **Many other use cases for ElasticIP flexibilities can be benificial**.
+    - Dynamic Scaling: To add or remove instances without affecting the public IP address of your service.
+    - DNS Records: To maintain stable DNS records that point to your service.
+    - Efficient Resource Utilization
+    - Security Groups: You can associate security groups with EIPs to control inbound and outbound traffic, enhancing security.
+    - EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
 ### Working With ElasticIPs
+- **Creating ElasticIp and Assign it to Instance**:
+  1. `Network & Security > Elastic IPs > Allocate ElasticIP address > RegionMatchInstanceRegion > Allocate > Name it(optional)`
+  2. `Actions > Associate ElasticIp > Resource Type (select instance) > Instance (chose the desired Instance) > Associate`
+
+## Security Groups
+
+
+## IAM Roles With EC2
+
+## SSH With EC2
