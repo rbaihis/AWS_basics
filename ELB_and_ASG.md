@@ -8,6 +8,7 @@ In this part we will focus on `horizontally resource scaling` also known as `sca
 `Elasticity` is the ability to accuire resources as you need them and release thes resources when you no longer need them without the need for explicit human intervention.</br>
 AWS high abilibility for cloud workloads can be achieved across three service groups (EC2, RDS and others MDB, Storage services[S3, EFS, EBS] ).</br>
 >**For Max Availibiliy** from EC2, an architecture invilving `ELB`, `Multiple AZs`, `ASGs` should be implemented.
+
 >**`ELastic Load Balancers(ELB)` and `Auto-Scaling Groups(ASG)`**, Automatically and dynamically distribute traffic load between multiple instances.
 >**Elasticity** can be `effectively managed` using two methods.
 >>`Elastic Load Balancers (ELB)`
@@ -38,6 +39,7 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 > An `ELB` can be configured to direct incomming traffic by specifying one or more listeners.
 
 > A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
+
 > `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
 ### ELB Load Balancer Types:
 - **Application Load Balancers**: (OSI Model `Layer-7 LB`) it `operates at the request level`.
