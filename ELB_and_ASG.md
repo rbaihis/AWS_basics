@@ -57,7 +57,7 @@ Load balancer processes incoming requests based on preconfigured rules and distr
   - `Note` do not assume that `Spring Gateway as GLBs` springGW uses internally a layer-7 ALBs to route traffic. 
 - **Classic Load Balancers**: (to be dropped or already dropped from AWS)
 ### Creating ELB
-> Navigate to `Load Balancer` under _Load balancing_
+> Navigate to `Load Balancer` under <ins>Load balancing</ins>
 > 1. Select Loa
 > 2. 
 
