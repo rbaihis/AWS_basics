@@ -1,7 +1,7 @@
 # AWS EC2
 >EC2 is the computational backbone of AWS.</br>
 
->Virtualisation is the process of creating a software-based virtual representation of a Hardware-Resource (server, router, networks, storade ,etc).</br>
+>Virtualisation is the process of creating a software-based virtual representation of a Hardware-Resource (server, router, networks, storage ,etc).</br>
 
 >When deploying an EC2 instance, we re creating a virtual representation of a physical server and it's resources(CPU,GPU,Network,Storage).</br>
 >EC2 can have diffirent configurations.
