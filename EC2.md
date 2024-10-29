@@ -1,10 +1,12 @@
 # AWS EC2
-EC2 is the computational backbone of AWS.</br>
-Virtualisation is the process of creating a software-based virtual representation of a Hardware-Resource (server, router, networks, storade ,etc).</br>
-When deploying an EC2 instance, we re creating a virtual representation of a physical server and it's resources(CPU,GPU,Network,Storage).</br>
-EC2 can have diffirent configurations.
-AWS offers a highly customizable set of configuration options for EC2 instances.</br>
-EC2 Configuration settings can be adapted to resource needs in real-time.
+>EC2 is the computational backbone of AWS.</br>
+
+>Virtualisation is the process of creating a software-based virtual representation of a Hardware-Resource (server, router, networks, storade ,etc).</br>
+
+>When deploying an EC2 instance, we re creating a virtual representation of a physical server and it's resources(CPU,GPU,Network,Storage).</br>
+>EC2 can have diffirent configurations.
+>AWS offers a highly customizable set of configuration options for EC2 instances.</br>
+>EC2 Configuration settings can be adapted to resource needs in real-time.
 
 ## Useful Links
 - [EC2 instance types](https://aws.amazon.com/ec2/instance-types)
@@ -27,20 +29,29 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
 - [SSH With EC2](#SSH-With-EC2)
   
 ## EC2 Instance 
-- EC2 instances are scalable virtual computing environments.
-- AWS offers pre-configured software packages that include an operating system and other applications that are pre installedon deployment. These templates are called `AMIs (Amazon Machine Images)`.
-- There are variety of configurations for instances, known as `Instances Types`. these configuration includes `(CPU,Memory,Storage,Network-Capacity,GPU)`.
-- Whatever operation can be done on a Physical server can be done with EC2 intances.
-- To access your EC2 instance you can use SSH connection or AWS-Console.
-- EC2 can have `Multiple types of Storage Volumes`, both temporary and persistant.
+>EC2 instances are scalable virtual computing environments.
+
+>AWS offers pre-configured software packages that include an operating system and other applications that are pre installedon deployment. These templates are called `AMIs (Amazon Machine Images)`.
+
+>There are variety of configurations for instances, known as `Instances Types`. these configuration includes `(CPU,Memory,Storage,Network-Capacity,GPU)`.
+
+>Whatever operation can be done on a Physical server can be done with EC2 intances.
+
+>To access your EC2 instance you can use SSH connection or AWS-Console.
+
+>EC2 can have `Multiple types of Storage Volumes`, both temporary and persistant.
   - Temporary storage is known as instance storage volume, all data get deleted from storage when instance stopped, hibernated, or terminated.
   - `EBS (Elastic Bloc Store)` volumes offer persistant storage for data that is not to be deleted when an instance changes its operational state.
   - `Note` type of EC2 instances matters when chosing a persistant volume since some type offers multiple choices while others only offers ESB only ass attachment Volumes.
-- EC2 instances, and ESB volumes can be launched in multiple regions and availibility zones.
-- `Firewalls` can be configurated through AWS. using `Security Groups`.
-- when deployed, each instance has an IPv4 address standard and Public , this Public feature is called `(Elastic IP)`, ELastic IPs can be associated and disassiociated from EC2 instance which makes them flexible and transfable under the same region.
-- Note that if disassociated the ElasticIP, you still have publicIPs, but PublicIp that re not ElasticIPs can changes and are not flexibal and reliable as the ElasticIPs.
-- EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
+
+>EC2 instances, and ESB volumes can be launched in multiple regions and availibility zones.
+
+>`Firewalls` can be configurated through AWS. using `Security Groups`.
+
+>when deployed, each instance has an IPv4 address standard and Public , this Public feature is called `(Elastic IP)`, ELastic IPs can be associated and disassiociated from EC2 instance which makes them flexible and transfable under the same region.
+
+>`Note that` if disassociated the ElasticIP, you still have publicIPs, but PublicIp that re not ElasticIPs can changes and are not flexibal and reliable as the ElasticIPs.
+  - EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
 
 ### EC2 Instance Core Feature
 - Deploy virtual machines
