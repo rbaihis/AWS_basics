@@ -17,7 +17,7 @@ AWS high abilibility for cloud workloads can be achieved across three service gr
 ## Navigation
 - [Load Balancer Overview](#Load-Balancer-Overview)
 - [Elastic Load Balancer - ELB](#Elastic-Load-Balancer---ELB)
-  - [ELB Load Balancer Types](#ELB-Load-Balancer-Types)
+  - [ELB - Load Balancer Types](#ELB---Load-Balancer-Types)
 - [](#)
 - [](#)
 - [](#)
@@ -43,7 +43,7 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 > A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
 
 > `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
-### ELB Load Balancer Types
+### ELB - Load Balancer Types
 - **Application Load Balancers**: (OSI Model `Layer-7 LB`) it `operates at the request level`.
   - ALBs are suited for HTTP/HTTPS requests.
   - ALBs offers a broad range of routing rules for incoming requests. this includes:
@@ -56,6 +56,10 @@ Load balancer processes incoming requests based on preconfigured rules and distr
   - They are primarily used to distribute network traffic to network appliances like firewalls, intrusion detection systems, and VPNs.
   - `Note` do not assume that `Spring Gateway as GLBs` springGW uses internally a layer-7 ALBs to route traffic. 
 - **Classic Load Balancers**: (to be dropped or already dropped from AWS)
+### Creating ELB
+> Navigate to `Load Balancer` under _Load balancing_
+> 1. Select Loa
+> 2. 
 
 
 ## Auto-Scaling Groups - ASG
@@ -81,9 +85,16 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 ## ELB + ASG Together
 How to create an ELB integrated with an ASG.
 >Steps:
->  1. h
->  2. hi
->  3. 
+>  1. Create a `Launch Template` for the EC2 instance to be grouped under the `ASG`.
+>     - Defines the instance type, AMI, security groups, key pairs, EFS-config, EBS-config, IAM-Roles, and user data (for customization).
+>     - Use a Pre-Configured tested custom AMI with all your (customization installed) for faster deployment and avoid the overhead of using `user data (for customization)`.  
+>  3. Create your ASG and specify the desired `Lunch template`.
+>     - Configure the min-max, and the other fields to answer to your expected load.
+>     - Defines scaling policies based on metrics like CPU utilization, network traffic, or custom metrics.
+>  4. Create your ELB of type ALBs, and add the ASG as a target
+>     - Provide the necessary features like load balancing algorithms desired, health checks, sticky sessions, and SSL termination.
+>  5. You re done test your resources by calling it via the ELB is entry point. 
+ 
    
 
  
