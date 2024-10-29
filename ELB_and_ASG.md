@@ -43,6 +43,7 @@ Load balancer processes incoming requests based on preconfigured rules and distr
 > A `Listener` is a process that checks for connection requests, it is configured with `a protocol` and `port number` for connections from `Clients to the Load balancer`. Likewise, it is configure with a protocol and a port number for connections from `Load Balancer to the targets`.
 
 > `Target Group` is **a group** of registred targets that are configured to handle `specified network traffic (typically Replicas)`.
+ 
 ### ELB - Load Balancer Types
 - **Application Load Balancers**: (OSI Model `Layer-7 LB`) it `operates at the request level`.
   - ALBs are suited for HTTP/HTTPS requests.
@@ -56,10 +57,25 @@ Load balancer processes incoming requests based on preconfigured rules and distr
   - They are primarily used to distribute network traffic to network appliances like firewalls, intrusion detection systems, and VPNs.
   - `Note` do not assume that `Spring Gateway as GLBs` springGW uses internally a layer-7 ALBs to route traffic. 
 - **Classic Load Balancers**: (to be dropped or already dropped from AWS)
+### ELB Scheme
+- `Internet-facing`: if you re expecting request coming from the internet and not from a private network having routing rules to your ELB.
+- `internal`: an internal load balancer routes requests from clients to targets using private ip addresses.
+### VPC Choice
+- VPC can't be changed after creating ELB.
+- its important that you chose a VPC that your target groups is also under it.
+### Assign or Create a security Group
+- Allow the necessary inbound rules usually is enough. usual cases (HTTP/HTTPS)
+### Target Groups Types ELB Can Forward Traffic To
+- `Check documentation for info`
+- Instances
+- Ip addressses
+- Lambda Function (Only for ALB-ELBS)
+- Application Load Balancer
 ### Creating ELB
 > Navigate to `Load Balancer` under <ins>Load balancing</ins>
-> 1. Select Loa
-> 2. 
+> 1. Select load balancer type (ALD - for HTTP/HTTPS) -> create
+> 2. Name it
+> 3. Specify Schema
 
 
 ## Auto-Scaling Groups - ASG
@@ -92,8 +108,32 @@ How to create an ELB integrated with an ASG.
 >     - Configure the min-max, and the other fields to answer to your expected load.
 >     - Defines scaling policies based on metrics like CPU utilization, network traffic, or custom metrics.
 >  4. Create your ELB of type ALBs, and add the ASG as a target
->     - Provide the necessary features like load balancing algorithms desired, health checks, sticky sessions, and SSL termination.
->  5. You re done test your resources by calling it via the ELB is entry point. 
+>     - Provide the necessary features like:
+>       - scheme(internet-facing, internal), IP-Type(v4 or DualStack)
+>       - Network mapping : VPC, Mappings(select at least 2 availibility zones & 1-subnet per zone).
+>         - `Select as many zones as possible for the purpose of fault tolerance & high availibility`
+>       - Security Group
+>       - Listeners & routing:
+>         - protocol, port
+>         - `listener-target(Create a target groupe)`
+>           - instances type since we want to point to ASG directly wich is of type instances
+>           - Select the VPC
+>           - Chose the Protocol Version based on your use case
+>           - add path to the instance is `Health Check endpoint` for supervising its health. ex `/actuator/health`
+>       - load balancing algorithms desired, health checks, sticky sessions, and SSL termination, tags.
+>  5. `Default attributes will be created` **Updatable** after creation.
+>  6. `Select the available instances(in our case the ASG group).
+>     - Specify ports for the selected instances
+>     - Click on `Include as pending below`
+>  7. Create target group
+>  8. Back to the ELB - Configuration page
+>  9. `Attach` the Target Group
+>  10. ADD-on services (optional- added charges) ignore it
+>  11. Check the summuary before creating for any errors
+>  12. Create a load Blancer > **Done**
+>  13. Get your ELBès ip or DNS
+>  14. Test your service by sending request to the load balancer.
+
  
    
 
