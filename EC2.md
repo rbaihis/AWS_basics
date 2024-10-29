@@ -41,9 +41,9 @@
 >To access your EC2 instance you can use SSH connection or AWS-Console.
 
 >EC2 can have `Multiple types of Storage Volumes`, both temporary and persistant.
-  - Temporary storage is known as instance storage volume, all data get deleted from storage when instance stopped, hibernated, or terminated.
-  - `EBS (Elastic Bloc Store)` volumes offer persistant storage for data that is not to be deleted when an instance changes its operational state.
-  - `Note` type of EC2 instances matters when chosing a persistant volume since some type offers multiple choices while others only offers ESB only ass attachment Volumes.
+>  - Temporary storage is known as instance storage volume, all data get deleted from storage when instance stopped, hibernated, or terminated.
+>  - `EBS (Elastic Bloc Store)` volumes offer persistant storage for data that is not to be deleted when an instance changes its operational state.
+>  - `Note` type of EC2 instances matters when chosing a persistant volume since some type offers multiple choices while others only offers ESB only ass attachment Volumes.
 
 >EC2 instances, and ESB volumes can be launched in multiple regions and availibility zones.
 
