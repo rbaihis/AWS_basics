@@ -52,7 +52,7 @@
 >when deployed, each instance has an IPv4 address standard and Public , this Public feature is called `(Elastic IP)`, ELastic IPs can be associated and disassiociated from EC2 instance which makes them flexible and transfable under the same region.
 
 >`Note that` if disassociated the ElasticIP, you still have publicIPs, but PublicIp that re not ElasticIPs can changes and are not flexibal and reliable as the ElasticIPs.
-  - EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
+>  - EIPs provide a static IP address that remains constant, even if the underlying instance is stopped, started, or terminated.
 
 ### EC2 Instance Core Feature
 - Deploy virtual machines
