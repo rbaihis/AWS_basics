@@ -62,6 +62,10 @@ EC2 Configuration settings can be adapted to resource needs in real-time.
   - Storage Optimized -> family : D2, D3, I3, I4i, etc
   - Accelarated Computing -> family : P4d, G5, G6, Trn1, Inf1, Inf2, DL1, DL2q, F1, etc
   - HPC Optimized -> family : Hpc
+  - **Important Notes**
+    - Some Types may offer extra charge since they have `Credit` for `over utilisation` of credit.
+    - **Read More about these Types before Choosing One**
+      - **Burstable Performance** under general purpose category like t2, t3
 
 ## AMI - Amazon Machine Image
 - An AMi contains the initial configuration information required to deploy an EC2 instance (think of it as a dockerImage or VMx-Image for VMware).
